@@ -1,4 +1,4 @@
-export default {'quiz1':
+export default {'cards':
   [{'id': 1, 'image': 'images/apple.jpeg', 'Answer': 'Apple'},
     {'id': 2, 'image': 'images/banana.png', 'Answer': 'Banana'},
     {'id': 3, 'image': 'images/cherry.png', 'Answer': 'Cherry'},
