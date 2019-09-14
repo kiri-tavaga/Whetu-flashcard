@@ -2,40 +2,32 @@ import React, {Component} from 'react'
 import FCQuestion from './FCQuestion'
 import fc from './fc'
 
-import {Divider, Button, Reveal, Grid} from 'semantic-ui-react'
+import {Button, Reveal, Grid} from 'semantic-ui-react'
 
-export default class Practice extends Component {
+export default class Flashcard extends Component {
   constructor (props) {
     super(props)
 
-    this.state = {
+    this.state={
       fc: fc.cards,
       currentCard: {}
     }
   }
   componentDidMount () {
-    const currentCards = this.state.cards
+    const currentCards=this.state.cards
     this.setState({
-
       cards: currentCards,
       currentCard: this.getRandomCard(currentCards)
     })
   }
 
   getRandomCard (currentCards) {
-    let card = currentCards[Math.floor(Math.random() * currentCards.length)]
+    let card=currentCards[Math.floor(Math.random() * currentCards.length)]
     return card
   }
 
-  updateCard () {
-    const currentCards = this.state.cards
-    this.setState({
-      currentCard: this.getRandomCard(currentCards)
-    })
-  }
-
-  clickHandler = event => {
-    const currentCards = this.state.cards
+  clickHandler=event => {
+    const currentCards=this.state.cards
     this.setState({
       currentCard: this.getRandomCard(currentCards)
     })
@@ -50,10 +42,10 @@ export default class Practice extends Component {
             <Grid.Column>
               <Reveal animated='small fade'>
                 <Reveal.Content visible>
-                  <FCQuestion image={this.state.currentCard.image} />
+                  <FCQuestion image={this.state.image} />
                 </Reveal.Content>
                 <Reveal.Content hidden>
-                  <FCQuestion answers = {this.state.currentCard.Answers} />
+                  <FCQuestion answer={this.state.answer} />
                 </Reveal.Content>
               </Reveal>
             </Grid.Column>
